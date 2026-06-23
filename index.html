@@ -323,6 +323,70 @@ footer p { color: rgba(255,255,255,.7); font-size: 14px; line-height: 1.6; }
   font-size: 13px; color: rgba(255,255,255,.6);
 }
 
+/* ===== Cross-Site Network ===== */
+.network {
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+  padding: 80px 24px;
+  border-top: 1px solid var(--border);
+}
+.network-inner {
+  max-width: 1180px; margin: 0 auto;
+}
+.network h2 { font-size: 36px; margin-bottom: 12px; }
+.network .sub {
+  color: var(--text-muted); font-size: 16px;
+  margin-bottom: 32px; max-width: 720px;
+}
+.network-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.network-card {
+  display: block;
+  padding: 24px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.network-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 165, 168, 0.15);
+}
+.network-card.current {
+  background: linear-gradient(135deg, var(--teal-light) 0%, #f0fbfa 100%);
+  border-color: var(--teal);
+  border-width: 2px;
+}
+.network-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+.network-card h4 {
+  font-size: 17px; font-weight: 700;
+  margin: 0 0 6px 0;
+  color: var(--navy);
+}
+.network-card.current h4 {
+  color: var(--teal-dark);
+}
+.network-card p {
+  font-size: 13px; line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .network-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .network-grid { grid-template-columns: 1fr; }
+}
+
 /* ===== CTA banner ===== */
 .cta {
   background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
@@ -852,6 +916,53 @@ body[data-lang="vi"] [data-en] { display: none; }
 </div>
 
 </main>
+
+<!-- CROSS-SITE NETWORK -->
+<section class="network">
+  <div class="network-inner">
+    <span class="section-num">∞.</span>
+    <h2><span data-en>Tennis Network</span><span data-vi>Mạng Lưới Tennis</span></h2>
+    <p class="sub"><span data-en>Explore more tennis resources across Henry's ecosystem — knowledge, encyclopedias, and tools</span><span data-vi>Khám phá thêm các tài nguyên tennis trong hệ sinh thái của Henry — tri thức, bách khoa toàn thư, và công cụ</span></p>
+
+    <div class="network-grid">
+      <a class="network-card" href="https://tennis-doctor.henry-phamduc.workers.dev/" target="_blank" rel="noopener">
+        <div class="network-icon">🏥</div>
+        <h4><span data-en>Tennis Doctor</span><span data-vi>Tennis Doctor</span></h4>
+        <p><span data-en>Main landing page — your tennis hub</span><span data-vi>Trang chính — cổng thông tin tennis của bạn</span></p>
+      </a>
+
+      <a class="network-card" href="https://henryphamduc.github.io/tennis/" target="_blank" rel="noopener">
+        <div class="network-icon">📚</div>
+        <h4><span data-en>Henry's Tennis Knowledge Vault</span><span data-vi>Kho Tri Thức Tennis Henry</span></h4>
+        <p><span data-en>22 deep dives, 14-Part master manual, 2-page cheat sheet — bilingual EN-VI</span><span data-vi>22 bài chuyên sâu, cẩm nang 14 phần, cheat sheet 2 trang — song ngữ EN-VI</span></p>
+      </a>
+
+      <a class="network-card" href="https://henryphamduc.github.io/tennis-wiki/" target="_blank" rel="noopener">
+        <div class="network-icon">📖</div>
+        <h4><span data-en>Tennis Wiki (VI)</span><span data-vi>Bách Khoa Tennis (VI)</span></h4>
+        <p><span data-en>Open encyclopedia of modern tennis — Vietnamese</span><span data-vi>Bách khoa toàn thư mở về quần vợt hiện đại — tiếng Việt</span></p>
+      </a>
+
+      <a class="network-card" href="https://henryphamduc.github.io/tennis-wiki-en/" target="_blank" rel="noopener">
+        <div class="network-icon">📕</div>
+        <h4><span data-en>Tennis Wiki (EN)</span><span data-vi>Tennis Wiki (EN)</span></h4>
+        <p><span data-en>Open encyclopedia of modern tennis — English</span><span data-vi>Bách khoa toàn thư mở về quần vợt hiện đại — tiếng Anh</span></p>
+      </a>
+
+      <a class="network-card current" href="https://henryphamduc.github.io/tennis-future-lab/">
+        <div class="network-icon">🔬</div>
+        <h4><span data-en>Tennis Future Lab (You are here)</span><span data-vi>Tennis Future Lab (Bạn đang ở đây)</span></h4>
+        <p><span data-en>Biomechanics framework + AI video analyzer</span><span data-vi>Khung sinh học + phân tích video AI</span></p>
+      </a>
+
+      <a class="network-card" href="https://huggingface.co/spaces/HenryPhamDuc/tennis-analyzer" target="_blank" rel="noopener">
+        <div class="network-icon">🤖</div>
+        <h4><span data-en>AI Video Analyzer (HF)</span><span data-vi>Phân Tích Video AI (HF)</span></h4>
+        <p><span data-en>Upload tennis video → AI analyzes your technique vs Federer</span><span data-vi>Upload video tennis → AI phân tích kỹ thuật so với Federer</span></p>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
